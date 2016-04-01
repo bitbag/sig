@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from sigtask.views import index
-from sigtask.views import MusicanSerialize, AlbumSerialize
+from sigtask.views import MusicianViewset, AlbumViewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'musican',MusicanSerialize)
-router.register(r'album',AlbumSerialize)
+router.register(r'musican',MusicianViewset)
+router.register(r'album',AlbumViewset)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),

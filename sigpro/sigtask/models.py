@@ -7,7 +7,7 @@ class  Musician(models.Model):
     Instrument = models.CharField(max_length=100)
 
 class Album(models.Model):
-    Artist=models.ForeignKey(Musician)
-    Name=models.CharField(max_length=100)
-    Release_date=models.DateField()
-    Num_starts=models.IntegerField()
+    Artist = models.ForeignKey(Musician)
+    Name = models.CharField(max_length=100)
+    Release_date = models.DateField()
+    Num_starts = models.IntegerField()

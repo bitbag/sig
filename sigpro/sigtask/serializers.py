@@ -3,7 +3,7 @@ __author__ = 'Administrator'
 from rest_framework import serializers
 from sigtask.models import Musician, Album
 
-class MusicanSerialize(serializers.HyperlinkedModelSerializer):
+class MusicianSerialize(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Musician
         fields = ('First_name','Last_name','Instrument')
