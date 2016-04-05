@@ -15,17 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from sigtask.views import index
-from sigtask.views import MusicianViewset, AlbumViewset
+from sigtask.views import index, basex, Write_to_redis, Get_from_redis
+from sigtask.views import MusicianViewset, AlbumViewset, ServicesViewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'musican',MusicianViewset)
 router.register(r'album',AlbumViewset)
+router.register(r'service',ServicesViewset)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include(router.urls)),
     url(r'^index/', index),
+    url(r'^basex/', basex),
+    url(r'^rewis/', Write_to_redis),
+    url(r'^redis/', Get_from_redis),
 ]

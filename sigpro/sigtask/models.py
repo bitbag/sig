@@ -11,3 +11,10 @@ class Album(models.Model):
     Name = models.CharField(max_length=100)
     Release_date = models.DateField()
     Num_starts = models.IntegerField()
+
+
+class Services(models.Model):
+    serviceid = models.CharField(max_length=15)
+    servicename = models.CharField(max_length=30)
+    serviceversion = models.CharField(max_length=30)
+    serviceport = models.IntegerField()

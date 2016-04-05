@@ -43,6 +43,7 @@
 <body>
 <div id="user">
     <form method="post" id="formx" action="/basex/">
+        {% csrf_token %}
     <p>服务id: <input type="text" name="sid" id="sid"/></p>
     <p>服务名称: <input type="text" name="sname" id="sname"/></p>
     <p>服务版本号: <input type="text" name="sversion" id="sversion" /></p>
