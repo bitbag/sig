@@ -6,7 +6,7 @@ from sigtask.models import Musician, Album, Services
 class MusicianSerialize(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Musician
-        fields = ('First_name','Last_name','Instrument')
+        fields = ('First_name','Last_name','Instrument','version','status')
 
 class AlbumSerialize(serializers.HyperlinkedModelSerializer):
     class Meta:

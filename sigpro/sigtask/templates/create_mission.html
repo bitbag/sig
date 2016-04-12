@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create_mission</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <style type="text/css">
+        #user form{
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="/static/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/static/layer/layer.js"></script>
+    <script type="text/javascript" >
+        $(function(){
+           $("#check").click(function(){
+               var hostlist = $("#hostlist").val();
+               var playbook = $("#playbook").val();
+               var missversion = $("#missversion").val();
+               if(hostlist==""){
+                   layer.alert("主机列表不能为空!");
+                   return false;
+               }
+               if(playbook==""){
+                   layer.alert("playbook不能为空!");
+                   return false;
+               }
+               if(missversion==""){
+                   layer.alert("任务版本号不能为空!");
+                   return false;
+               }
+               $("#formx").submit();
+           });
+
+        });
+    </script>
+</head>
+<body>
+<div id="user">
+    <form method="post" id="formx">
+        {% csrf_token %}
+    <p>主机列表 <input type="text" name="hostlist" id="hostlist"/></p>
+    <p>playbook <input type="text" name="playbook" id="playbook"/></p>
+    <p>任务版本号 <input type="text" name="missversion" id="missversion"/></p>
+    <input type="button" id="check" value="Submit"/>
+    </form>
+</div>
+</body>
+</html>
